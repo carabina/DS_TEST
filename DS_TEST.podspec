@@ -12,6 +12,6 @@ Pod::Spec.new do |s|
   s.requires_arc  = true
   s.platform      = :ios, '9.0'
   s.framework     = 'Foundation'
-  s.source_files  = "DS_ModelSDK/*"
+  s.source_files  = "DS_ModelSDK/*.swift"
 
 end
