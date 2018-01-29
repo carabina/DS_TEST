@@ -70,7 +70,7 @@ extension NSObject{
         return m_obj.children.flatMap {$0.label}
     }
     //从数组中获取类名
-    fileprivate func ds_classNameFromArr(_ propertyKey: String) -> String?{
+    fileprivate func ds_classNameFromArr(_ propertyKey: String) -> String{
         let m_obj = Mirror(reflecting: self)
         for item in m_obj.children{
             if item.label == propertyKey{
@@ -86,10 +86,10 @@ extension NSObject{
                 }
             }
         }
-        return nil
+        return ""
     }
     //从字典中获取类名
-    fileprivate func ds_classNameFromDic(_ propertyKey: String) -> String?{
+    fileprivate func ds_classNameFromDic(_ propertyKey: String) -> String{
         let m_obj = Mirror(reflecting: self)
         for item in m_obj.children{
             if item.label == propertyKey{
@@ -104,7 +104,7 @@ extension NSObject{
                 }
             }
         }
-        return nil
+        return ""
     }
     //string 转 实例对象，对象为nsobject
     fileprivate func ds_Obj(_ className: String) -> NSObject?{
