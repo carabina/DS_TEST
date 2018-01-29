@@ -3,7 +3,7 @@
 Pod::Spec.new do |s|
 
   s.name          = "DS_TEST"
-  s.version       = "1.0.0"
+  s.version       = "1.0.1"
   s.license       = "MIT"
   s.summary       = "JSON to model for iOS."
   s.homepage      = "https://github.com/d2space/DS_TEST"
