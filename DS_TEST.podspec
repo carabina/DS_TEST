@@ -3,7 +3,7 @@
 Pod::Spec.new do |s|
 
   s.name          = "DS_TEST"
-  s.version       = "1.0.1"
+  s.version       = "1.0.0"
   s.license       = "MIT"
   s.summary       = "JSON to model for iOS."
   s.homepage      = "https://github.com/d2space/DS_TEST"
@@ -12,6 +12,6 @@ Pod::Spec.new do |s|
   s.requires_arc  = true
   s.platform      = :ios, '9.0'
   s.framework     = 'Foundation'
-  s.source_files  = "DS_ModelSDK/**/*.swift"
+  s.source_files  = "Tools/*.swift"
 
 end
