@@ -77,13 +77,11 @@ extension NSObject{
                 let m_subObj = Mirror(reflecting: item.value)
                 
                 var className: String = String(m_subObj.description)
-                if className.count > 0{
-                    if className.contains("Mirror for Optional<Array<") == true{
-                        className = className.replacingOccurrences(of: "Mirror for Optional<Array<", with: "")
-                        if className.contains(">") == true{
-                            className = className.replacingOccurrences(of: ">", with: "")
-                            return className
-                        }
+                if className.contains("Mirror for Optional<Array<") == true{
+                    className = className.replacingOccurrences(of: "Mirror for Optional<Array<", with: "")
+                    if className.contains(">") == true{
+                        className = className.replacingOccurrences(of: ">", with: "")
+                        return className
                     }
                 }
             }
@@ -97,13 +95,11 @@ extension NSObject{
             if item.label == propertyKey{
                 let m_subObj = Mirror(reflecting: item.value)
                 var className = String(m_subObj.description)
-                if className.count > 0{
-                    if className.contains("Mirror for Optional<") == true{
-                        className = className.replacingOccurrences(of: "Mirror for Optional<", with: "")
-                        if className.contains(">") == true{
-                            className = className.replacingOccurrences(of: ">", with: "")
-                            return className
-                        }
+                if className.contains("Mirror for Optional<") == true{
+                    className = className.replacingOccurrences(of: "Mirror for Optional<", with: "")
+                    if className.contains(">") == true{
+                        className = className.replacingOccurrences(of: ">", with: "")
+                        return className
                     }
                 }
             }
