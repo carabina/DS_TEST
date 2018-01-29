@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.source        = { :git => "https://github.com/d2space/DS_TEST.git", :tag => s.version }
   s.requires_arc  = true
   s.source_files  = 'DS_Tools/*', '*.framework'
-  s.platform      = :iOS, '9.0'
+  s.platform      = :ios, '7.0'
   s.framework     = 'Foundation'
   s.source_files     = "DS_Tools/**/*.{swift}"
 
