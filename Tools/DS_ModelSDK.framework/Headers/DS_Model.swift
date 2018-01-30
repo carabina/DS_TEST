@@ -70,41 +70,32 @@ extension NSObject{
         return m_obj.children.flatMap {$0.label}
     }
     //从数组中获取类名
-    fileprivate func ds_classNameFromArr(_ propertyKey: String) -> String{
-        let m_obj = Mirror(reflecting: self)
-        for item in m_obj.children{
-            if item.label == propertyKey{
-                let m_subObj = Mirror(reflecting: item.value)
-                
-                var className: String = String(m_subObj.description)
-                if className.contains("Mirror for Optional<Array<") == true{
-                    className = className.replacingOccurrences(of: "Mirror for Optional<Array<", with: "")
-                    if className.contains(">") == true{
-                        className = className.replacingOccurrences(of: ">", with: "")
-                        return className
-                    }
-                }
-            }
-        }
-        return ""
-    }
-    //从字典中获取类名
-    fileprivate func ds_classNameFromDic(_ propertyKey: String) -> String{
+    fileprivate func ds_classNameFromArr(_ propertyKey: String) -> String?{
         let m_obj = Mirror(reflecting: self)
         for item in m_obj.children{
             if item.label == propertyKey{
                 let m_subObj = Mirror(reflecting: item.value)
                 var className = String(m_subObj.description)
-                if className.contains("Mirror for Optional<") == true{
-                    className = className.replacingOccurrences(of: "Mirror for Optional<", with: "")
-                    if className.contains(">") == true{
-                        className = className.replacingOccurrences(of: ">", with: "")
-                        return className
-                    }
-                }
+                className = className.replacingOccurrences(of: "Mirror for Optional<Array<", with: "")
+                className = className.replacingOccurrences(of: ">", with: "")
+                return className
             }
         }
-        return ""
+        return nil
+    }
+    //从字典中获取类名
+    fileprivate func ds_classNameFromDic(_ propertyKey: String) -> String?{
+        let m_obj = Mirror(reflecting: self)
+        for item in m_obj.children{
+            if item.label == propertyKey{
+                let m_subObj = Mirror(reflecting: item.value)
+                var className = String(m_subObj.description)
+                className = className.replacingOccurrences(of: "Mirror for Optional<", with: "")
+                className = className.replacingOccurrences(of: ">", with: "")
+                return className
+            }
+        }
+        return nil
     }
     //string 转 实例对象，对象为nsobject
     fileprivate func ds_Obj(_ className: String) -> NSObject?{
