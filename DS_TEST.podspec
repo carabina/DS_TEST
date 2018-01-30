@@ -12,7 +12,6 @@ Pod::Spec.new do |s|
   s.source        = { :git => "https://github.com/d2space/DS_TEST.git", :tag => s.version }
   s.exclude_files = "Classes/Exclude"
   s.framework     = 'Foundation'
-  s.source_files  = "Tools/*.swift"
   s.vendored_frameworks = 'Tools/DS_ModelSDK.framework'
 
 end
